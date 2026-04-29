@@ -22,14 +22,12 @@ header{
 header p{
   font-size:12px;
   color:#888;
-  margin-top:5px;
 }
 
 nav a{
   color:#fff;
   margin:0 10px;
   text-decoration:none;
-  font-size:14px;
 }
 
 .hero{
@@ -39,7 +37,6 @@ nav a{
 
 .hero h1{
   font-size:32px;
-  margin-bottom:10px;
 }
 
 .hero p{
@@ -67,22 +64,21 @@ nav a{
   gap:15px;
 }
 
-.card{
-  background:#161a2f;
-  padding:20px;
-  border-radius:8px;
-}
-
 .grid img{
   width:100%;
   border-radius:8px;
+}
+
+.caption{
+  font-size:14px;
+  color:#ccc;
+  margin-top:8px;
 }
 
 footer{
   text-align:center;
   padding:20px;
   background:#11152a;
-  font-size:14px;
   color:#aaa;
 }
 </style>
@@ -109,19 +105,40 @@ footer{
 <section class="section">
   <h2>Our Services</h2>
   <div class="grid">
-    <div class="card">Glass Repair</div>
-    <div class="card">Installation</div>
-    <div class="card">Custom Glass Work</div>
+    <div>Glass Repair</div>
+    <div>Installation</div>
+    <div>Custom Glass Work</div>
   </div>
 </section>
 
 <section class="section">
   <h2>Recent Work</h2>
+
   <div class="grid">
-    <img src="images/work1.jpg">
-    <img src="images/work2.jpg">
-    <img src="images/work3.jpg">
+    <div>
+      <img src="images/IMG_1735.jpeg" alt="Before shower install">
+      <div class="caption">Before</div>
+    </div>
+
+    <div>
+      <img src="images/IMG_1736.jpeg" alt="After glass install">
+      <div class="caption">After</div>
+    </div>
+
+    <div>
+      <img src="images/IMG_1737.jpeg" alt="Glass detail">
+    </div>
+
+    <div>
+      <img src="images/IMG_1738.jpeg" alt="Finished shower glass">
+    </div>
   </div>
+
+  <p style="margin-top:20px;color:#ccc;">
+    Before and After 👍🏻 <br><br>
+    Glad to make another customer happy!
+  </p>
+
 </section>
 
 <section class="section">
