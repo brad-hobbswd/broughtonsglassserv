@@ -21,10 +21,6 @@ header{
   border-bottom:3px solid #2a6cff;
 }
 
-header h2{
-  margin:0;
-}
-
 nav a{
   color:#fff;
   margin:0 10px;
@@ -64,8 +60,15 @@ nav a{
 
 .grid img{
   width:100%;
-  border-radius:8px;
+  border-radius:10px;
   border:2px solid #1a1f35;
+  box-shadow:0 12px 30px rgba(0,0,0,0.6);
+  transition:all 0.3s ease;
+}
+
+.grid img:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.8);
 }
 
 /* TEXT */
@@ -73,6 +76,9 @@ nav a{
   color:#ccc;
   margin-top:20px;
   line-height:1.6;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* FOOTER */
@@ -86,6 +92,18 @@ footer{
 
 footer a{
   color:#2a6cff;
+}
+
+/* ===== ANIMATION ===== */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -101,19 +119,19 @@ footer a{
   </nav>
 </header>
 
-<section class="section">
+<section class="section fade-in">
 
   <div class="project">
     <h2>Commercial Glass Installation</h2>
     <p class="project-date">Completed February 3 and February 6, 2026</p>
 
     <div class="grid">
-      <img src="images/IMG_1739.jpeg" alt="Exterior glass install">
-      <img src="images/IMG_1740.jpeg" alt="Finished building front">
-      <img src="images/IMG_1741.jpeg" alt="Interior glass wall">
-      <img src="images/IMG_1742.jpeg" alt="Entry doors installed">
-      <img src="images/IMG_1743.jpeg" alt="Side angle view">
-      <img src="images/IMG_1744.jpeg" alt="Full building glass">
+      <img class="fade-in" src="images/IMG_1739.jpeg" alt="Exterior glass install">
+      <img class="fade-in" src="images/IMG_1740.jpeg" alt="Finished building front">
+      <img class="fade-in" src="images/IMG_1741.jpeg" alt="Interior glass wall">
+      <img class="fade-in" src="images/IMG_1742.jpeg" alt="Entry doors installed">
+      <img class="fade-in" src="images/IMG_1743.jpeg" alt="Side angle view">
+      <img class="fade-in" src="images/IMG_1744.jpeg" alt="Full building glass">
     </div>
 
     <p>
@@ -145,6 +163,21 @@ footer a{
     </a>
   </span>
 </footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
