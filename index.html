@@ -117,6 +117,34 @@ footer{
 footer a{
   color:#fff;
 }
+
+/* HERO */
+.hero{
+  padding:40px 20px;
+  text-align:center;
+  background:linear-gradient(to bottom, #ffffff, #f5f7fb);
+}
+
+/* BANNER IMAGE */
+.banner{
+  max-width:900px;
+  margin:0 auto 20px;
+}
+
+.banner img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* SUBTEXT */
+.hero-sub{
+  font-size:16px;
+  color:#444;
+  margin-top:10px;
+}
+
 </style>
 </head>
 
@@ -133,15 +161,17 @@ footer a{
 
 <section class="hero">
 
-  <img src="images/0CB34EA2-2C57-44E5-AB94-33C007039683.png" alt="Broughtons Glass Service Logo" style="max-width:300px;width:100%;margin-bottom:20px;border-radius:8px;">
+  <div class="banner">
+    <img src="images/0CB34EA2-2C57-44E5-AB94-33C007039683.png" alt="Broughtons Glass Service Banner">
+  </div>
 
-  <h1>Best Little Glass Shop in the Mountains</h1>
-
-  <p>Commercial • Residential • Automotive</p>
+  <p class="hero-sub">
+    Commercial • Residential • Automotive Glass Services
+  </p>
 
   <a href="tel:16065425581" class="btn">Call Now</a>
   <br>
-  <a href="contact.html" class="btn" style="background:#444;margin-top:10px;">Request a Quote</a>
+  <a href="contact.html" class="btn secondary">Request a Quote</a>
 
 </section>
 
