@@ -9,55 +9,75 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#0c0f1a;
-  color:#fff;
+  background:#ffffff;
+  color:#111;
 }
 
+/* HEADER */
 header{
   padding:20px;
   text-align:center;
-  background:#11152a;
+  background:#0d2a5c; /* deep blue */
+  color:#fff;
+  border-bottom:4px solid #c8102e; /* red accent */
 }
 
 header p{
   font-size:12px;
-  color:#888;
+  color:#ddd;
 }
 
+/* NAV */
 nav a{
   color:#fff;
   margin:0 10px;
   text-decoration:none;
+  font-weight:bold;
 }
 
+/* HERO */
 .hero{
   padding:60px 20px;
   text-align:center;
+  background:linear-gradient(to bottom, #ffffff, #f5f7fb);
 }
 
 .hero h1{
   font-size:32px;
+  color:#0d2a5c;
 }
 
 .hero p{
-  color:#ccc;
+  color:#444;
 }
 
+/* BUTTONS */
 .btn{
   display:inline-block;
   margin-top:20px;
   padding:12px 20px;
-  background:#2a6cff;
+  background:#c8102e; /* red */
   color:#fff;
   text-decoration:none;
   border-radius:6px;
+  font-weight:bold;
 }
 
+.btn:hover{
+  background:#a50d24;
+}
+
+/* SECTIONS */
 .section{
   padding:40px 20px;
   text-align:center;
 }
 
+.section h2{
+  color:#0d2a5c;
+}
+
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
@@ -67,28 +87,36 @@ nav a{
 .grid img{
   width:100%;
   border-radius:8px;
+  border:2px solid #eee;
 }
 
-.caption{
-  font-size:14px;
-  color:#ccc;
-  margin-top:8px;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  background:#11152a;
-  color:#aaa;
-}
-
+/* BEFORE/AFTER HEADINGS */
 .section h3{
   text-align:left;
   max-width:1000px;
-  margin-left:auto;
-  margin-right:auto;
+  margin:20px auto 10px;
+  color:#c8102e;
 }
 
+/* TEXT */
+.caption{
+  font-size:14px;
+  color:#555;
+  margin-top:8px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0d2a5c;
+  color:#fff;
+  border-top:4px solid #c8102e;
+}
+
+footer a{
+  color:#fff;
+}
 </style>
 </head>
 
