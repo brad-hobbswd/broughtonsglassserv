@@ -17,17 +17,11 @@ body{
 header{
   padding:20px;
   text-align:center;
-  background:#0d2a5c; /* deep blue */
+  background:#0d2a5c;
   color:#fff;
-  border-bottom:4px solid #c8102e; /* red accent */
+  border-bottom:4px solid #c8102e;
 }
 
-header p{
-  font-size:12px;
-  color:#ddd;
-}
-
-/* NAV */
 nav a{
   color:#fff;
   margin:0 10px;
@@ -37,18 +31,28 @@ nav a{
 
 /* HERO */
 .hero{
-  padding:60px 20px;
+  padding:40px 20px;
   text-align:center;
   background:linear-gradient(to bottom, #ffffff, #f5f7fb);
 }
 
-.hero h1{
-  font-size:32px;
-  color:#0d2a5c;
+/* BANNER */
+.banner{
+  max-width:900px;
+  margin:0 auto 20px;
 }
 
-.hero p{
-  color:#444;
+.banner img{
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* HERO TEXT */
+.hero-sub{
+  font-size:16px;
+  color:#333;
+  margin-top:10px;
 }
 
 /* BUTTONS */
@@ -56,15 +60,25 @@ nav a{
   display:inline-block;
   margin-top:20px;
   padding:12px 20px;
-  background:#c8102e; /* red */
+  background:#c8102e;
   color:#fff;
   text-decoration:none;
   border-radius:6px;
   font-weight:bold;
+  transition:all 0.3s ease;
 }
 
 .btn:hover{
   background:#a50d24;
+  transform:translateY(-2px);
+}
+
+.btn.secondary{
+  background:#0d2a5c;
+}
+
+.btn.secondary:hover{
+  background:#091f47;
 }
 
 /* SECTIONS */
@@ -77,34 +91,13 @@ nav a{
   color:#0d2a5c;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:15px;
-}
-
-.grid img{
-  width:100%;
-  border-radius:8px;
-  border:2px solid #eee;
-}
-
 /* BEFORE/AFTER HEADINGS */
 .section h3{
   text-align:left;
   max-width:1000px;
   margin:20px auto 10px;
-  color:#c8102e; /* strong red */
+  color:#c8102e;
   font-weight:bold;
-}
-
-/* BODY TEXT UNDER IMAGES */
-.section p{
-  color:#333;
-  font-size:15px;
-  max-width:800px;
-  margin:20px auto;
 }
 
 .section h3::after{
@@ -116,11 +109,43 @@ nav a{
   margin-top:5px;
 }
 
-/* TEXT */
-.caption{
-  font-size:14px;
-  color:#555;
-  margin-top:8px;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:15px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* IMAGES */
+.grid img{
+  width:100%;
+  border-radius:10px;
+  border:2px solid #eee;
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+  transition:all 0.3s ease;
+}
+
+.grid img:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.2);
+}
+
+/* WORK TEXT */
+.work-text{
+  margin-top:20px;
+  color:#222;
+  font-size:16px;
+  font-weight:500;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.6;
+}
+
+.work-text strong{
+  color:#c8102e;
 }
 
 /* FOOTER */
@@ -136,49 +161,17 @@ footer a{
   color:#fff;
 }
 
-/* HERO */
-.hero{
-  padding:40px 20px;
-  text-align:center;
-  background:linear-gradient(to bottom, #ffffff, #f5f7fb);
+/* ===== ANIMATION ===== */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
 }
 
-/* BANNER IMAGE */
-.banner{
-  max-width:900px;
-  margin:0 auto 20px;
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
 }
-
-.banner img{
-  width:100%;
-  height:auto;
-  border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* SUBTEXT */
-.hero-sub{
-  font-size:16px;
-  color:#444;
-  margin-top:10px;
-}
-
-.work-text{
-  margin-top:20px;
-  color:#222; /* strong readable text */
-  font-size:16px;
-  font-weight:500;
-  max-width:700px;
-  margin-left:auto;
-  margin-right:auto;
-  line-height:1.6;
-}
-
-/* OPTIONAL: highlight the first line */
-.work-text strong{
-  color:#c8102e; /* brand red */
-}
-
 </style>
 </head>
 
@@ -193,7 +186,7 @@ footer a{
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero fade-in">
 
   <div class="banner">
     <img src="images/0CB34EA2-2C57-44E5-AB94-33C007039683.png" alt="Broughtons Glass Service Banner">
@@ -203,13 +196,12 @@ footer a{
     Commercial • Residential • Automotive Glass Services
   </p>
 
-  <a href="tel:16065425581" class="btn">Call Now</a>
-  <br>
+  <a href="tel:16065425581" class="btn">Call Now</a><br>
   <a href="contact.html" class="btn secondary">Request a Quote</a>
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
   <h2>Our Services</h2>
   <div class="grid">
     <div>Glass Repair</div>
@@ -218,44 +210,57 @@ footer a{
   </div>
 </section>
 
-<section class="section">
+<section class="section fade-in">
   <h2>Recent Work</h2>
 
-  <!-- BEFORE -->
-  <h3 style="margin-top:20px;color:#aaa;">Before</h3>
+  <h3>Before</h3>
   <div class="grid">
-    <img src="images/IMG_1735.jpeg" alt="Before shower install">
+    <img class="fade-in" src="images/IMG_1735.jpeg" alt="Before shower install">
   </div>
 
-  <!-- AFTER -->
-  <h3 style="margin-top:30px;color:#aaa;">After</h3>
+  <h3>After</h3>
   <div class="grid">
-    <img src="images/IMG_1736.jpeg" alt="After glass install">
-    <img src="images/IMG_1737.jpeg" alt="Glass detail">
-    <img src="images/IMG_1738.jpeg" alt="Finished shower glass">
+    <img class="fade-in" src="images/IMG_1736.jpeg" alt="After glass install">
+    <img class="fade-in" src="images/IMG_1737.jpeg" alt="Glass detail">
+    <img class="fade-in" src="images/IMG_1738.jpeg" alt="Finished shower glass">
   </div>
 
- <p class="work-text">
-  <strong>Before and After 👍🏻</strong><br><br>
-  Glad to make another customer happy!
-</p>
+  <p class="work-text">
+    <strong>Before and After 👍🏻</strong><br><br>
+    Glad to make another customer happy!
+  </p>
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
   <h2>Why Choose Us</h2>
   <p>Reliable service. Quality craftsmanship. Honest pricing.</p>
 </section>
 
 <footer>
   © 2026 Broughtons Glass Service <br><br>
-  <span style="font-size:13px;color:#777;">
+  <span style="font-size:13px;color:#ddd;">
     Website by 
-    <a href="https://brad-hobbswd.github.io/brad-hobbswd" target="_blank" style="color:#2a6cff;text-decoration:none;">
+    <a href="https://brad-hobbswd.github.io/brad-hobbswd" target="_blank" style="text-decoration:none;">
       Brad Hobbs Web Design
     </a>
   </span>
 </footer>
+
+<!-- ANIMATION SCRIPT -->
+<script>
+const faders = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+faders.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
